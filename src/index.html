@@ -10,16 +10,20 @@
     />
     <style>
       body {
+        background-color: #f0f0f0;
+        margin: 0;
+      }
+
+      #app {
         display: flex;
         flex-direction: column;
         gap: 1rem;
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-color: #f0f0f0;
-        margin: 0;
       }
-      #watchContainer {
+
+      .watchContainer {
         width: 200px;
         height: 200px;
         border-radius: 50%;
@@ -32,7 +36,7 @@
         border: 6px solid rgb(167, 143, 176);
       }
 
-      #timeDisplay {
+      .timeDisplay {
         width: 140px;
         height: 60px;
         background-color: white;
@@ -44,6 +48,11 @@
         border-radius: 8px;
         text-align: center;
       }
+
+      .timeDisplay.light {
+        background-color: #fbe106;
+      }
+
       .blink {
         animation: blink 1s step-end infinite;
       }
@@ -55,16 +64,6 @@
     </style>
   </head>
   <body>
-    <div id="watchContainer">
-      <div id="timeDisplay">
-        <span id="hoursDisplay">00</span>:<span id="minutesDisplay">00</span
-        >:<span id="secondsDisplay">00</span>
-      </div>
-    </div>
-    <div class="buttons">
-      <button id="modeButton">Mode</button>
-      <button id="increaseButton">Increase</button>
-      <button id="lightButton">Light</button>
-    </div>
+    <div id="app"></div>
   </body>
 </html>

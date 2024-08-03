@@ -1,72 +1,63 @@
 /**
- * watchModel.ts
+ * WatchModel.ts
  */
+import { ModeEnum } from "./mode";
+import { Time } from "./time";
+
 export class WatchModel {
-  private hours: number;
-  private minutes: number;
-  private seconds: number;
+  private _time: Time;
+  private _isLightOn: boolean;
+  private _currentMode: ModeEnum;
 
-  constructor() {
-    const now = new Date();
-    this.hours = now.getHours();
-    this.minutes = now.getMinutes();
-    this.seconds = now.getSeconds();
+  constructor(hours: number, minutes: number, seconds: number, tz: number) {
+    this._time = new Time(hours, minutes, seconds, tz);
+    this._isLightOn = false;
+    this._currentMode = ModeEnum.READ_ONLY;
   }
 
-  getTime(): string {
-    return `${this.formatTime(this.hours)}:${this.formatTime(
-      this.minutes
-    )}:${this.formatTime(this.seconds)}`;
+  public get utcHours() {
+    return this._time.utcHours;
+  }
+  public set utcHours(hours: number) {
+    this._time.utcHours = hours;
   }
 
-  getHours(): number {
-    return this.hours;
+  public get utcMinutes() {
+    return this._time.utcMinutes;
+  }
+  public set utcMinutes(minutes: number) {
+    this._time.utcMinutes = minutes;
   }
 
-  getMinutes(): number {
-    return this.minutes;
+  public get utcSeconds() {
+    return this._time.utcSeconds;
+  }
+  public set utcSeconds(seconds: number) {
+    this._time.utcSeconds = seconds;
   }
 
-  getSeconds(): number {
-    return this.seconds;
+  public get timeZone() {
+    return this._time.timeZone;
+  }
+  public set timeZone(tz: number) {
+    this._time.timeZone = tz;
   }
 
-  setHours(hours: number): void {
-    this.hours = hours % 24;
+  public get time() {
+    return this._time;
   }
 
-  setMinutes(minutes: number): void {
-    this.minutes = minutes % 60;
+  public get isLightOn() {
+    return this._isLightOn;
+  }
+  public set isLightOn(light: boolean) {
+    this._isLightOn = light;
   }
 
-  setSeconds(seconds: number): void {
-    this.seconds = seconds % 60;
+  public get currentMode() {
+    return this._currentMode;
   }
-
-  incrementSeconds(): void {
-    this.seconds++;
-    if (this.seconds > 59) {
-      this.seconds = 0;
-      this.incrementMinutes();
-    }
-  }
-
-  private incrementMinutes(): void {
-    this.minutes++;
-    if (this.minutes > 59) {
-      this.minutes = 0;
-      this.incrementHours();
-    }
-  }
-
-  private incrementHours(): void {
-    this.hours++;
-    if (this.hours > 23) {
-      this.hours = 0;
-    }
-  }
-
-  private formatTime(unit: number): string {
-    return unit < 10 ? `0${unit}` : `${unit}`;
+  public set currentMode(mode: ModeEnum) {
+    this._currentMode = mode;
   }
 }
