@@ -1,3 +1,6 @@
+/**
+ * watchTimeController.ts
+ */
 import { WatchModel } from "./watchModel";
 import { WatchView } from "./watchView";
 

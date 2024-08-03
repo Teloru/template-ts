@@ -1,3 +1,6 @@
+/**
+ * watchModel.ts
+ */
 export class WatchModel {
   private hours: number;
   private minutes: number;
