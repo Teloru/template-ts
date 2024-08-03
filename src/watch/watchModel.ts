@@ -7,9 +7,10 @@ export class WatchModel {
   private seconds: number;
 
   constructor() {
-    this.hours = 0;
-    this.minutes = 0;
-    this.seconds = 0;
+    const now = new Date();
+    this.hours = now.getHours();
+    this.minutes = now.getMinutes();
+    this.seconds = now.getSeconds();
   }
 
   getTime(): string {

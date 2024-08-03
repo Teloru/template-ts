@@ -6,7 +6,7 @@ Web application simulating a watch with some functionalities. [_See details in i
 
 ### Part A
 
-![screen record of the first part of the project](img/part_a.gif)
+![screen record of the first part of the project](img/part_a_timezone.gif)
 
 ## Launch
 
