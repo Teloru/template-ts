@@ -22,17 +22,15 @@ export class WatchIncreaseTimeController {
 
   increaseTime(): void {
     if (!this.modeController.isEditing()) {
-      console.log("Cannot increase time: you are not in editing mode.");
+      console.log("Cannot increase time: Not in editing mode.");
       return;
     }
 
     const mode = this.modeController.getCurrentMode();
     if (mode === 1) {
-      this.model.setMinutes((this.model.getMinutes() + 1) % 60);
-    } else if (mode === 2) {
       this.model.setHours((this.model.getHours() + 1) % 24);
-    } else if (mode === 3) {
-      this.model.setSeconds((this.model.getSeconds() + 1) % 60);
+    } else if (mode === 2) {
+      this.model.setMinutes((this.model.getMinutes() + 1) % 60);
     }
 
     this.view.displayTime();

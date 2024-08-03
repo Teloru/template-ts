@@ -49,8 +49,6 @@ export class WatchView {
       this.hoursElement.classList.add("blink");
     } else if (component === "minutes") {
       this.minutesElement.classList.add("blink");
-    } else if (component === "seconds") {
-      this.secondsElement.classList.add("blink");
     }
   }
 
@@ -59,8 +57,6 @@ export class WatchView {
       this.hoursElement.classList.remove("blink");
     } else if (component === "minutes") {
       this.minutesElement.classList.remove("blink");
-    } else if (component === "seconds") {
-      this.secondsElement.classList.remove("blink");
     }
   }
 }

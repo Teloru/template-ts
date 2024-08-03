@@ -7,7 +7,7 @@ import { WatchView } from "./watchView";
 export class WatchModeController {
   private model: WatchModel;
   private view: WatchView;
-  private currentMode: number; // 0 = Default (view-only), 1 = Editing minutes, 2 = Editing hours, 3 = Editing seconds
+  private currentMode: number; // 0 = Default (view-only), 1 = Editing hours, 2 = Editing minutes, 3 = No editing
 
   constructor(model: WatchModel, view: WatchView) {
     this.model = model;
@@ -16,7 +16,7 @@ export class WatchModeController {
   }
 
   changeMode(): void {
-    this.currentMode = (this.currentMode + 1) % 4; // There are now 4 modes: default, editing seconds, editing minutes, editing hours
+    this.currentMode = (this.currentMode + 1) % 3; // There are now 3 modes: editing hours, editing minutes, no editing
     this.updateBlinking();
   }
 
@@ -25,7 +25,7 @@ export class WatchModeController {
   }
 
   public isEditing(): boolean {
-    return this.currentMode > 0; // Editing minutes, hours, or seconds
+    return this.currentMode === 1 || this.currentMode === 2; // Editing hours or minutes
   }
 
   private updateBlinking(): void {
@@ -38,12 +38,10 @@ export class WatchModeController {
 
     // Apply blinking based on current mode
     if (this.currentMode === 1) {
-      this.view.blink("minutes");
-    } else if (this.currentMode === 2) {
       this.view.blink("hours");
-    } else if (this.currentMode === 3) {
-      this.view.blink("seconds");
+    } else if (this.currentMode === 2) {
+      this.view.blink("minutes");
     }
-    // No blinking in default view mode (0)
+    // No blinking in default view mode (0) or no editing mode (3)
   }
 }
