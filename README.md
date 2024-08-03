@@ -1,9 +1,16 @@
-# template-ts
+# GE Healthcare Technical Test
 
-Template typescript project
+## Watch App
+
+Web application simulating a watch with some functionalities. [_See details in instructions.md_](./instructions.md)
+
+### Part A
+
+![screen record of the first part of the project](img/part_a.gif)
+
+## Launch
 
 ```javascript
 npm install
-npm install -g webpack
 npm run start
 ```
