@@ -1,1 +1,1 @@
-export * from "./watchController";
+export * from "./controller/watchController";
