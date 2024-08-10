@@ -13,9 +13,8 @@ MVC web application simulating a watch with some functionalities. [_See details 
 
 Skipped directly to the part C, most important part of the technical test for my profile. :)
 
-![screen record for part C's result](img/task_c.gif)
-
-UML: todo
+![screen record for part C's result](img/task_c_final.gif)
+![UML class diagram for part C](img/UML_partC.png)
 
 ## Launch
 

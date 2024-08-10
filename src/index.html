@@ -22,12 +22,14 @@
         align-items: center;
         height: 100vh;
       }
+
       .watchAndButtons {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1rem;
       }
+
       .watchContainer {
         width: 200px;
         height: 200px;
@@ -99,6 +101,19 @@
         background-color: red;
         margin-top: -90px;
         width: 1px;
+      }
+
+      .hourTick {
+        --tickDistance: 5.6rem;
+        position: absolute;
+        width: 4px;
+        height: var(--tickHeight);
+        left: calc(50% - 2px); /* width / 2 */
+        top: calc(50% - var(--tickDistance));
+        background: rgb(167, 143, 176);
+        border-radius: 2rem;
+        transform-origin: 50% var(--tickDistance);
+        transform: rotate(var(--rotation));
       }
     </style>
   </head>

@@ -14,7 +14,17 @@ export class AnalogWatchView extends WatchView {
   public initView() {
     super.initView();
 
-    // Création des éléments pour les aiguilles
+    let i = 1;
+    while (i <= 12) {
+      const hourTick = document.createElement("span");
+      hourTick.className = "hourTick";
+      hourTick.style.setProperty("--rotation", `${i * 30}deg`);
+      hourTick.style.setProperty("--tickHeight", i % 3 == 0 ? "35px" : "20px");
+      this._watchElem.appendChild(hourTick);
+      i++;
+    }
+
+    // hands
     const hourHand = document.createElement("div");
     hourHand.className = "hand hour-hand";
     const minuteHand = document.createElement("div");
@@ -22,7 +32,6 @@ export class AnalogWatchView extends WatchView {
     const secondHand = document.createElement("div");
     secondHand.className = "hand second-hand";
 
-    // Ajouter les aiguilles à l'horloge
     this._watchElem.appendChild(hourHand);
     this._watchElem.appendChild(minuteHand);
     this._watchElem.appendChild(secondHand);
