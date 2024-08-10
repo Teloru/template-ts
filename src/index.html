@@ -44,7 +44,6 @@
       .timeDisplay {
         width: 140px;
         height: 60px;
-        background-color: white;
         color: black;
         display: flex;
         justify-content: center;
@@ -52,6 +51,10 @@
         font-size: 24px;
         border-radius: 8px;
         text-align: center;
+      }
+
+      .digitalMode {
+        background-color: white;
       }
 
       .timeDisplay.light {
@@ -65,6 +68,37 @@
         50% {
           visibility: hidden;
         }
+      }
+
+      .hand {
+        position: absolute;
+        width: 2px;
+        background-color: black;
+        top: 50%;
+        left: 50%;
+        transform-origin: bottom center;
+        width: 4px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      .hour-hand {
+        height: 60px;
+        background-color: rgb(255, 255, 255);
+        margin-top: -60px;
+      }
+
+      .minute-hand {
+        height: 80px;
+        background-color: gray;
+        margin-top: -80px;
+      }
+
+      .second-hand {
+        height: 90px;
+        background-color: red;
+        margin-top: -90px;
+        width: 1px;
       }
     </style>
   </head>

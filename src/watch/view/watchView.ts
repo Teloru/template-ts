@@ -24,7 +24,7 @@ export class WatchView {
     this._watchElem.className = "watchContainer";
 
     this._watchScreen = document.createElement("div");
-    this._watchScreen.className = "timeDisplay";
+    this._watchScreen.className = "timeDisplay digitalMode";
 
     this._buttonContainer = document.createElement("div");
     this._buttonContainer.className = "buttons";

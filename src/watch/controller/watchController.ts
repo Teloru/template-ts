@@ -96,6 +96,10 @@ export class WatchController {
         this._view = new AnalogWatchView();
         this._view.printView(this._model.time, this._model.currentMode);
         this._currentWatchType = WatchTypeEnum.ANALOG;
+
+        this._view.watchAndButtons
+          .querySelector(".timeDisplay")
+          ?.classList.remove("digitalMode");
         break;
       }
       case WatchTypeEnum.ANALOG: {
@@ -107,6 +111,10 @@ export class WatchController {
           this._model.isLightOn
         );
         this._currentWatchType = WatchTypeEnum.DIGITAL;
+
+        this._view.watchAndButtons
+          .querySelector(".timeDisplay")
+          ?.classList.add("digitalMode");
         break;
       }
     }
