@@ -2,8 +2,8 @@
  * AnalogWatchView.ts
  */
 import { WatchView } from "./watchView";
-import { ModeEnum } from "../mode";
-import { Time } from "../time";
+import { ModeEnum } from "../utils/mode";
+import { Time } from "../utils/time";
 import { Matrix } from "../math/matrix";
 
 export class AnalogWatchView extends WatchView {

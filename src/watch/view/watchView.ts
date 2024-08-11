@@ -1,8 +1,8 @@
 /**
  * WatchView.ts
  */
-import { ModeEnum } from "../mode";
-import { Time } from "../time";
+import { ModeEnum } from "../utils/mode";
+import { Time } from "../utils/time";
 
 export class WatchView {
   protected _watchElem: HTMLElement;

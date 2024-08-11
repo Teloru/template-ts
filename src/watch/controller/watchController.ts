@@ -1,16 +1,12 @@
 /**
  * WatchController.ts
  */
-import { ModeEnum } from "../mode";
+import { ModeEnum } from "../utils/mode";
+import { WatchTypeEnum } from "../utils/watchType";
 import { WatchModel } from "../watchModel";
 import { WatchView } from "../view/watchView";
 import { DigitalWatchView } from "../view/digitalWatchView";
 import { AnalogWatchView } from "../view/analogWatchView";
-
-enum WatchTypeEnum {
-  "DIGITAL" = "DIGITAL",
-  "ANALOG" = "ANALOG",
-}
 
 export class WatchController {
   private _model: WatchModel;
@@ -89,7 +85,7 @@ export class WatchController {
     this._updateView();
   }
 
-  private switchView(): void {
+  public switchView(): void {
     switch (this._currentWatchType) {
       case WatchTypeEnum.DIGITAL: {
         this._view.watchAndButtons.remove();

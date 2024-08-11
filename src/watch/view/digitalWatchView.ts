@@ -3,8 +3,8 @@
  */
 
 import { WatchView } from "./watchView";
-import { ModeEnum } from "../mode";
-import { Time } from "../time";
+import { ModeEnum } from "../utils/mode";
+import { Time } from "../utils/time";
 
 export class DigitalWatchView extends WatchView {
   constructor() {

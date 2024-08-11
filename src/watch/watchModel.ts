@@ -1,8 +1,8 @@
 /**
  * WatchModel.ts
  */
-import { ModeEnum } from "./mode";
-import { Time } from "./time";
+import { ModeEnum } from "./utils/mode";
+import { Time } from "./utils/time";
 
 export class WatchModel {
   private _time: Time;
